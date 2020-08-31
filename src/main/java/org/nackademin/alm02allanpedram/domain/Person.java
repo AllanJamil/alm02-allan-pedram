@@ -3,11 +3,8 @@ package org.nackademin.alm02allanpedram.domain;
 public class Person {
 
     private String fullName;
-
     private String nationality;
-
     private int age;
-
     private GenderType gender;
 
     public Person(String fullName, String nationality, int age, GenderType gender) {
