@@ -22,14 +22,14 @@ class FortuneCookieTest {
 
     private FortuneCookie fortuneCookie;
     private List<String> testList;
-    private File fortunes;
+    private File fortunesFile;
 
     @BeforeEach
     void setUp() throws IOException {
         fortuneCookie = new FortuneCookie();
         testList = new ArrayList<>();
-        fortunes = ResourceUtils.getFile("classpath:fortunes.txt");
-        Stream<String> stream = Files.lines(Path.of(fortunes.getPath()));
+        fortunesFile = ResourceUtils.getFile("classpath:fortunes.txt");
+        Stream<String> stream = Files.lines(Path.of(fortunesFile.getPath()));
         stream.forEach(line -> testList.add(line));
 
     }
@@ -53,7 +53,7 @@ class FortuneCookieTest {
     void testFileExistAndHasSameValues() {
         //TODO: change to pure jUnit5
 
-        Path filePath = Path.of(fortunes.getPath());
+        Path filePath = Path.of(fortunesFile.getPath());
 
         assertTrue(Files.exists(filePath), "File should exist");
 
@@ -69,5 +69,10 @@ class FortuneCookieTest {
     @Test
     void testGetFileMethodIsTheSame() {
 
+        File file = new File("f.txt");
+        fortuneCookie.setFile(file);
+
+        assertEquals(file, fortuneCookie.getFile());
+        assertNotEquals(fortunesFile, fortuneCookie.getFile());
     }
 }
