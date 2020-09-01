@@ -11,16 +11,15 @@ import java.util.List;
 @Service
 public class FortuneCookieGeneratorService {
 
-    private RandomFactorService randomFactorService;
     private List<String> fortuneList = new FortuneCookie().getFortuneCookies();
 
-    @Autowired
-    public FortuneCookieGeneratorService(RandomFactorService randomFactorService) {
-        this.randomFactorService = randomFactorService;
+
+    public FortuneCookieGeneratorService() {
+
     }
 
     public CookieObj generateFortuneCookie(Person person) {
-        int randomNumber = randomFactorService.generateRandomNumberOnPerson(person);
+        int randomNumber = RandomFactorService.generateRandomNumberOnPerson(person);
         return new CookieObj(fortuneList.get(randomNumber));
     }
 
