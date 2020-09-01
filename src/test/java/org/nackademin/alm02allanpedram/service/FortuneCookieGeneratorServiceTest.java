@@ -19,7 +19,6 @@ class FortuneCookieGeneratorServiceTest {
     FortuneCookieGeneratorService fortuneCookieGeneratorService;
 
 
-
     @Test
     void generateFortuneCookie() {
         Person person = new Person("eaasd", "Norge", 18, GenderType.MALE);
@@ -31,6 +30,5 @@ class FortuneCookieGeneratorServiceTest {
         String expectedValue = "He who knows he has enough is rich.";
 
         assertThat(fortune).isEqualToIgnoringCase(expectedValue);
-
+        }
     }
-}
