@@ -22,13 +22,13 @@ class FortuneCookieGeneratorServiceTest {
 
     @Test
     void generateFortuneCookie() {
-        Person person = new Person("ea", "Norge", 18, GenderType.MALE);
+        Person person = new Person("eaasd", "Norge", 18, GenderType.MALE);
 
         int i = RandomFactorService.generateRandomNumberOnPerson(person);
         System.out.println(i);
 
         String fortune = fortuneCookieGeneratorService.generateFortuneCookie(person).getFortune();
-        String expectedValue = "If you think you can do a thing or think you can’t do a thing, you’re right.";
+        String expectedValue = "He who knows he has enough is rich.";
 
         assertThat(fortune).isEqualToIgnoringCase(expectedValue);
 
