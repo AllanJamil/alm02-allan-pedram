@@ -1,11 +1,14 @@
-package org.nackademin.alm02allanpedram.domain;
+package org.nackademin.alm02allanpedram.service;
 
+import org.nackademin.alm02allanpedram.domain.FortuneCookie;
+import org.nackademin.alm02allanpedram.domain.GenderType;
+import org.nackademin.alm02allanpedram.domain.Person;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Service
-public class RandomFactor {
+public class RandomFactorService {
 
     public static int generateRandomNumberOnPerson(Person person) {
         int valueFromFullName = getValueFromFullName(person.getFullName());
