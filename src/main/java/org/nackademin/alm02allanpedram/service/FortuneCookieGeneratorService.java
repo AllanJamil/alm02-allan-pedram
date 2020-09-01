@@ -1,5 +1,6 @@
 package org.nackademin.alm02allanpedram.service;
 
+import org.nackademin.alm02allanpedram.domain.CookieObj;
 import org.nackademin.alm02allanpedram.domain.FortuneCookie;
 import org.nackademin.alm02allanpedram.domain.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,9 @@ public class FortuneCookieGeneratorService {
         this.randomFactorService = randomFactorService;
     }
 
-    public String generateFortuneCookie(Person person) {
+    public CookieObj generateFortuneCookie(Person person) {
         int randomNumber = randomFactorService.generateRandomNumberOnPerson(person);
-        return fortuneList.get(randomNumber);
+        return new CookieObj(fortuneList.get(randomNumber));
     }
 
 
