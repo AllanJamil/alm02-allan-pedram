@@ -12,8 +12,12 @@ public class RandomFactor {
         int valueFromNationality = getValueFromNationality(person.getNationality());
         int valueFromAge = getValueFromAge(person.getAge());
         int valueFromGender = getValueFromGender(person.getGender());
+        int randomNumber  = (valueFromFullName + valueFromNationality + valueFromAge + valueFromGender);
 
-        int randomNumber = (valueFromFullName + valueFromNationality + valueFromAge + valueFromGender) / 5;
+        if (randomNumber < 100)
+            randomNumber = randomNumber *  5;
+        else
+            randomNumber = randomNumber / 5;
 
         int lengthOfFortuneList = new FortuneCookie().getLengthOfFortuneList();
         if (randomNumber < 0 || randomNumber > lengthOfFortuneList)
@@ -38,11 +42,11 @@ public class RandomFactor {
                 v2 = i;
             }
         }
-        return (v1 + v2) / 2;
+        return (v1 - v2) / 2;
     }
 
     private static int getValueFromNationality(String nationality) {
-        return (nationality.length() / 2) + 3;
+        return (nationality.length() / 5) + 3;
     }
 
     private static int getValueFromAge(int age) {
@@ -50,6 +54,6 @@ public class RandomFactor {
     }
 
     private static int getValueFromGender(GenderType genderType) {
-        return genderType == GenderType.MALE ? 50 : 25;
+        return genderType == GenderType.MALE ? 10 : 20;
     }
 }
