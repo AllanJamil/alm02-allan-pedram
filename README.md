@@ -2,7 +2,7 @@
 
 ## Fortune Teller Webapplication
 
-### This is a webapplication was made for school project learning ALM.
+### This is a webapplication that was made for school project learning ALM.
 
 ### Tells your future depending on certain Person attributes.
 
