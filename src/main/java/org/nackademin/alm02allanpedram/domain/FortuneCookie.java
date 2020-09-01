@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FortuneCookie {
 
-    List<String> fortuneCookies = new ArrayList<>();
+    private List<String> fortuneCookies = new ArrayList<>();
     File file;
 
     {

@@ -10,7 +10,7 @@ import java.util.Random;
 @Service
 public class RandomFactorService {
 
-    public static int generateRandomNumberOnPerson(Person person) {
+    public int generateRandomNumberOnPerson(Person person) {
         int valueFromFullName = getValueFromFullName(person.getFullName());
         int valueFromNationality = getValueFromNationality(person.getNationality());
         int valueFromAge = getValueFromAge(person.getAge());
