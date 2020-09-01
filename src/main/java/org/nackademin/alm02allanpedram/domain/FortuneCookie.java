@@ -8,24 +8,27 @@ import java.util.List;
 
 public class FortuneCookie {
 
+    private File file;
     private List<String> fortuneCookies = new ArrayList<>();
-    File file;
 
-    public List<String> getFortuneCookies() {
-
+    {
         try {
             file = ResourceUtils.getFile("classpath:fortunes.txt");
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
+            fortuneCookies = null;
         }
+    }
+
+
+
+    public List<String> getFortuneCookies() {
+
 
         BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
+            bufferedReader = new BufferedReader(new FileReader(this.file));
+        } catch (Exception e) {
+            return fortuneCookies = null;
         }
         String line = null;
 
@@ -42,5 +45,14 @@ public class FortuneCookie {
 
     public int getSizeOfFortuneList() {
         return getFortuneCookies().size();
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    // for testing purposes
+    public void setFile(File file) {
+        this.file = file;
     }
 }

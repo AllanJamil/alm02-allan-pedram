@@ -14,6 +14,10 @@ public class Person {
         this.gender = gender;
     }
 
+    public Person() {
+
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -44,15 +48,5 @@ public class Person {
 
     public void setGender(GenderType gender) {
         this.gender = gender;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "fullName='" + fullName + '\'' +
-                ", nationality='" + nationality + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                '}';
     }
 }

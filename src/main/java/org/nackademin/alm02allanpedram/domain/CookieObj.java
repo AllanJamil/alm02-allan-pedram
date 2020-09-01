@@ -15,11 +15,4 @@ public class CookieObj {
     public void setFortune(String fortune) {
         this.fortune = fortune;
     }
-
-    @Override
-    public String toString() {
-        return "CookieObj{" +
-                "fortune='" + fortune + '\'' +
-                '}';
-    }
 }
