@@ -7,7 +7,22 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn clean compile'
+                sh 'mvn clean install'
+            }
+             
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                    publishHTML([
+                        allowMissing: false, 
+                        alwaysLinkToLastBuild: false, 
+                        keepAll: false, 
+                        reportDir: 'target/surefire-reports/', 
+                        reportFiles: 'index.html', 
+                        reportName: 'Unit Tests', 
+                        reportTitles: 'Unit Tests'
+                    ])
+                }
             }
         }
         stage('Test'){
@@ -15,11 +30,12 @@ pipeline {
                 echo 'Testing..'
                 sh 'mvn test'
             }
+           
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                sh 'mvn spring-boot:run'
+                sh 'mvn -v'
         }
             post {
                 always {
