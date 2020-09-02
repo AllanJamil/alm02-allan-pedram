@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function post(person) {
         let xhr = new XMLHttpRequest();
-        let theUrl = "http://localhost:8080/fortune/api/cookie";
+        let theUrl = "http://localhost:8081/fortune/api/cookie";
         xhr.open("POST", theUrl);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhr.send(JSON.stringify(person));
