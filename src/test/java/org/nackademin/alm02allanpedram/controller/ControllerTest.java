@@ -29,7 +29,7 @@ class ControllerTest {
     MockMvc mockMvc;
 
     @Test
-    void getFortune() {
+    public void getFortune() {
 
         //given
         given(fortuneCookieGeneratorService.generateFortuneCookie(any(Person.class))).willReturn(new CookieObj("A dubious friend may be an enemy in camouflage."));
