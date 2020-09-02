@@ -22,6 +22,16 @@ pipeline {
                         reportName: 'Unit Tests',
                         reportTitles: 'Unit Tests'
                     ])
+
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: 'target/site/jacoco/',
+                        reportFiles: 'index.html',
+                        reportName: 'Test coverage',
+                        reportTitles: 'Test coverage'
+                    ])
                 }
             }
         }
