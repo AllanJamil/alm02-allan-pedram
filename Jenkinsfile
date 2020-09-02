@@ -9,29 +9,28 @@ pipeline {
                 echo 'Building..'
                 sh 'mvn clean install'
             }
-    
-        }
-        stage('Test'){
-            steps {
-                echo 'Testing..'
-                sh 'mvn test site'
-            }
-             
+
             post {
                 always {
-                    junit 'target/site/*.html'
+                    junit 'target/surefire-reports/*.xml'
                     publishHTML([
-                        allowMissing: false, 
-                        alwaysLinkToLastBuild: false, 
-                        keepAll: false, 
-                        reportDir: 'target/site/', 
-                        reportFiles: 'index.html', 
-                        reportName: 'Unit Tests', 
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: 'target/surefire-reports/',
+                        reportFiles: 'index.html',
+                        reportName: 'Unit Tests',
                         reportTitles: 'Unit Tests'
                     ])
                 }
             }
-           
+        }
+        stage('Test'){
+            steps {
+                echo 'Testing..'
+                sh 'mvn test'
+            }
+
         }
         stage('Deploy') {
             steps {
