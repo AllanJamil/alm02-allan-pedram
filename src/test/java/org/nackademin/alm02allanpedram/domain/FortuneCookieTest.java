@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -29,7 +30,8 @@ class FortuneCookieTest {
         fortuneCookie = new FortuneCookie();
         testList = new ArrayList<>();
         fortunesFile = ResourceUtils.getFile("classpath:fortunes.txt");
-        Stream<String> stream = Files.lines(Path.of(fortunesFile.getPath()));
+        Path path = Paths.get(fortunesFile.getPath());
+        Stream<String> stream = Files.lines(path);
         stream.forEach(line -> testList.add(line));
 
     }
@@ -53,7 +55,8 @@ class FortuneCookieTest {
     void testFileExistAndHasSameValues() {
         //TODO: change to pure jUnit5
 
-        Path filePath = Path.of(fortunesFile.getPath());
+
+        Path filePath = Paths.get(fortunesFile.getPath());
 
         assertTrue(Files.exists(filePath), "File should exist");
 
