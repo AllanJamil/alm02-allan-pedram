@@ -7,6 +7,7 @@ import org.nackademin.alm02allanpedram.domain.Person;
 
 import java.util.Random;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RandomFactorServiceTest {
@@ -34,6 +35,10 @@ class RandomFactorServiceTest {
         assertEquals(randomNumber, RandomFactorService.generateRandomNumberOnPerson(person));
         person.setAge(43);
         assertNotEquals(randomNumber, RandomFactorService.generateRandomNumberOnPerson(person));
+        person.setAge(900);
+        assertEquals(181, RandomFactorService.generateRandomNumberOnPerson(person));
+        person.setAge(-1000);
+        assertThat(RandomFactorService.generateRandomNumberOnPerson(person)).isGreaterThan(0);
     }
 
     @Test
