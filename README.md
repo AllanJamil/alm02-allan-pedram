@@ -8,7 +8,7 @@ The project folder contains two Jenkinfiles. Apply them to separately to differe
 
 #### Jenkinsfiledeployment
 
-Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command to run the application.
+Use the "Jenkinsfiledeployment" for deploying the application directly on jenkins. The file contains only one stage with the command to run the application.
 
 ```typescript
 stage ('Deploy') {
@@ -23,7 +23,7 @@ stage ('Deploy') {
 
 #### Jenkinsfile
 
-Apply this Jenkinsfile to run the pipeline with these stages(Build, Test, Publish, Save Artifact).
+Apply this "Jenkinsfile" to run the pipeline with these stages(Build, Test, Publish, Save Artifact).
 
 **NOTE:** This stage saves a war file. A reminder that this is a Spring Boot application running on tomcat.
 ```typescript
