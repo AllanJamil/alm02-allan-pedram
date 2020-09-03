@@ -8,7 +8,7 @@ The projectfolder contains two Jenkinfiles. Apply them to separate pipelines for
 
 ### Jenkinsfiledeployment
 
-Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command;
+Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command to run the application.
 
 ```sh
 mvn spring-boot:run
