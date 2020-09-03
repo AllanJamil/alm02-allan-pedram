@@ -11,6 +11,7 @@
     <groupId>org.nackademin</groupId>
     <artifactId>alm02-allan-pedram</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>alm02-allan-pedram</name>
     <description>Fortuneteller</description>
 
