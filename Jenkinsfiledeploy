@@ -1,0 +1,14 @@
+pipeline {
+//agent {
+     // docker { image 'maven:3.6.3-slim' }
+     // }
+     agent any
+     stages {
+        stage ('Deploy') {
+            steps {
+                echo 'Deploying...'
+                sh 'spring-boot:run'
+            }
+        }
+     }
+}
