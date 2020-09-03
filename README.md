@@ -6,7 +6,7 @@ A school project that tells your future depending on personal attributes. Built 
 
 The project folder contains two Jenkinfiles. Apply them to separately pipelines for desired goals.
 
-### Jenkinsfiledeployment
+#### Jenkinsfiledeployment
 
 Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command to run the application.
 
@@ -16,7 +16,7 @@ mvn spring-boot:run
 
 **NOTE:** Once the application has been deployed, it's accessible via **port: _8081_** (http://localhost:8081/)
 
-### Jenkinsfile
+#### Jenkinsfile
 
 Apply this Jenkinsfile to run the pipeline with these stages(Build, Test, Publish, Save Artifact).
 
