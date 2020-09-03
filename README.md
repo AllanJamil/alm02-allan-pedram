@@ -36,7 +36,7 @@ stage('Saving artifacts') {
 ```
 
 ## Team
-Project created by Pedram and Allan.
+Project created by **Pedram** and **Allan**.
 
 *2020 Nackademin*
 
