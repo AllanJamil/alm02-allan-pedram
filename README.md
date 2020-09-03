@@ -4,7 +4,7 @@ A school project that tells your future depending on personal attributes. Built 
 
 ## Jenkins
 
-The project folder contains two Jenkinfiles. Apply them to separately pipelines for desired goals.
+The project folder contains two Jenkinfiles. Apply them to separately to different pipelines for desired goals.
 
 #### Jenkinsfiledeployment
 
