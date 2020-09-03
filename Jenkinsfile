@@ -24,7 +24,7 @@ pipeline {
         stage ('Publish') {
 
             steps {
-                echo 'Publishing Test Reports'
+                echo 'Publishing Test Reports...'
             }
 
             post {
@@ -36,8 +36,8 @@ pipeline {
                             keepAll: false,
                             reportDir: 'target/surefire-reports/',
                             reportFiles: 'index.html',
-                            reportName: 'Unit Tests',
-                            reportTitles: 'Unit Tests'
+                            reportName: 'Surefire Test Report',
+                            reportTitles: 'Surefire Test Report'
                         ])
 
                         publishHTML([
@@ -46,8 +46,8 @@ pipeline {
                             keepAll: false,
                             reportDir: 'target/site/jacoco/',
                             reportFiles: 'index.html',
-                            reportName: 'Test coverage',
-                            reportTitles: 'Test coverage'
+                            reportName: 'Jacoco Test coverage',
+                            reportTitles: 'Jacoco Test coverage'
                         ])
                 }
             }
