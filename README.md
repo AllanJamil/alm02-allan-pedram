@@ -1,9 +1,42 @@
-# alm02-allan-pedram 
+# Fortune Teller
 
-## Fortune Teller Webapplication
+A school project that tells your future depending on personal attributes.
 
-### This is a webapplication that was made for school project learning ALM.
+## Jenkins
 
-### Tells your future depending on certain Person attributes.
+The projectfolder contains two Jenkinfiles. Apply them to separate pipelines for desired goals.
 
-#### ALM 2020 Nackademin
+### Jenkinsfiledeployment
+
+Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command;
+
+```sh
+mvn spring-boot:run
+```
+
+### Jenkinsfile
+
+Use the Jenkinsfile consists of several stages(Build, Test, Publish, Save Artifact).
+
+**NOTE:** This stage saves a war file. A reminder that this is a Spring Boot application running on tomcat.
+```typescript
+stage('Saving artifacts') {
+
+  steps {
+    echo 'Saving war file ...'
+    }
+
+    post {
+      always {
+        echo 'Saving artifacts..'
+          archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
+      }
+    }
+}
+```
+
+## Team
+Project created by Pedram and Allan.
+
+*2020 Nackademin*
+
