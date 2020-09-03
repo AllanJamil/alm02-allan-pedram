@@ -45,6 +45,10 @@ pipeline {
 
         stage ('Publish') {
 
+            steps {
+                echo 'Publishing Test Reports'
+            }
+
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
