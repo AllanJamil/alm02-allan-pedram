@@ -10,11 +10,11 @@ The project folder contains two Jenkinfiles. Apply them to separate pipelines fo
 
 Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command to run the application.
 
-**NOTE:** Once the application has been deployed, it's accessible via **port: _8081_** (http://localhost:8081/)
-
 ```sh
 mvn spring-boot:run
 ```
+
+**NOTE:** Once the application has been deployed, it's accessible via **port: _8081_** (http://localhost:8081/)
 
 ### Jenkinsfile
 
