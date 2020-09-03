@@ -1,6 +1,6 @@
 # Fortune Teller
 
-A school project that tells your future depending on personal attributes.
+A school project that tells your future depending on personal attributes. Built with BootStrap, Java, HTML and Javascript.
 
 ## Jenkins
 
@@ -9,6 +9,7 @@ The project folder contains two Jenkinfiles. Apply them to separate pipelines fo
 ### Jenkinsfiledeployment
 
 Use the Jenkinsfiledeployment for deploying the application directly on jenkins. The file contains only one stage with the command to run the application.
+**NOTE:** Once the application has been deployed, it's accessible via http://localhost:_8081_/ 
 
 ```sh
 mvn spring-boot:run
@@ -16,7 +17,7 @@ mvn spring-boot:run
 
 ### Jenkinsfile
 
-Use the Jenkinsfile consists of several stages(Build, Test, Publish, Save Artifact).
+Apply this Jenkinsfile to run the pipeline with these stages(Build, Test, Publish, Save Artifact).
 
 **NOTE:** This stage saves a war file. A reminder that this is a Spring Boot application running on tomcat.
 ```typescript
