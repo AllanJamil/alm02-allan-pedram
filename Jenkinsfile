@@ -25,6 +25,7 @@ pipeline {
 
             steps {
                 echo 'Publishing Test Reports...'
+                sh 'mvn surefire-report:report'
             }
 
             post {
@@ -34,8 +35,8 @@ pipeline {
                             allowMissing: false,
                             alwaysLinkToLastBuild: false,
                             keepAll: false,
-                            reportDir: 'target/surefire-reports/',
-                            reportFiles: 'index.html',
+                            reportDir: 'target/site/',
+                            reportFiles: 'surefire-report.html',
                             reportName: 'Surefire Test Report',
                             reportTitles: 'Surefire Test Report'
                         ])
@@ -68,3 +69,4 @@ pipeline {
         }
      }
 }
+
