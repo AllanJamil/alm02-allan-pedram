@@ -1,10 +1,12 @@
 pipeline {
-//agent {
-     // docker { image 'maven:3.6.3-slim' }
-     // }
+
      agent any
      stages {
         stage('Build') {
+            
+            agent {
+                docker { image 'rasilva1986/java-maven:alm' }
+            }
 
             steps {
                 echo 'Building..'
@@ -69,4 +71,3 @@ pipeline {
         }
      }
 }
-
